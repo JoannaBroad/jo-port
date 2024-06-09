@@ -1,37 +1,13 @@
 ---
-import { client } from "../lib/contentful";
 import Layout from "../layout/layout.astro"
-const projects = await client.getAllProjects();
+import Projects from "../components/projects.astro"
+import About from "../components/about.astro"
+import Hero from "../components/hero.astro"
 ---
 
-<Layout title="Astrobrary">
-	<h1 class="text-6xl sm:text-8xl text-center">
-		Astrobrary <span aria-label="Rocket Emoji">🚀</span>
-	</h1>
-	<h2 class="text-base text-center text-stone-400">
-		Collection of Astrology Science Fiction
-	</h2>
-	<div class="flex flex-wrap pt-5 -mx-2.5">
-		{
-			projects.map((project: any) => (
-				<div class="lg:w-1/3 px-2.5 mb-5">
-					<article class="rounded-lg bg-white shadow-lg p-5 h-full flex flex-col items-start justify-between">
-						<div>
-							<img
-								class="w-full object-cover aspect-2/3 mb-5"
-								alt=""
-								src={project.coverImage.url}
-								width={600}
-								height={400}
-							/>
-
-							<h2 class="text-xl font-bold mb-5">{project.title}</h2>
-							<p class="mb-6">{project.description}</p>
-							<img src={project.skill.url} alt="" />
-						</div>
-					</article>
-				</div>
-			))
-		}
-	</div>
+<Layout>
+	<!-- <Hero />
+	<About />
+	<Projects />
+	 -->
 </Layout>
