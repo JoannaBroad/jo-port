@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components'
+import Footer from '../components/footer.astro'
 
 ---
 <html lang="en">
@@ -10,8 +11,9 @@ import { Icon } from 'astro-icon/components'
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body class=" bg-rum-100 text-rum-800 font-serif p-5">
+	<body class=" bg-rum-100 text-rum-800 font-serif relative">
 		header here
 		<slot />
+		<Footer />
 	</body>
 </html>
