@@ -6,7 +6,7 @@ import { Icon } from 'astro-icon/components';
   <div class="">
     <div class="flex items-center justify-between h-16">
       <div class="flex items-center">
-            <Icon name="hedgehog" size={100} class="" />
+            <img src="src/icons/jbLogo.svg" alt="Logo for joanna broad" class=" size-32 mt-2">
       </div>
       <div class="hidden md:block">
         <div class="ml-10">
@@ -39,13 +39,20 @@ import { Icon } from 'astro-icon/components';
   </div>
 </nav>
 
-<script>
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
+<script lang="ts">
+	const mobileMenuButton = document.getElementById('mobile-menu-button');
+	const mobileMenu = document.getElementById('mobile-menu');
 
-  mobileMenuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    mobileMenuButton.querySelector('svg:first-child').classList.toggle('hidden');
-    mobileMenuButton.querySelector('svg:last-child').classList.toggle('hidden');
-  });
+	if (mobileMenuButton && mobileMenu) {
+		mobileMenuButton.addEventListener('click', () => {
+			mobileMenu.classList.toggle('hidden');
+			const firstSvg = mobileMenuButton.querySelector('svg:first-child');
+			const lastSvg = mobileMenuButton.querySelector('svg:last-child');
+			if (firstSvg && lastSvg) {
+				firstSvg.classList.toggle('hidden');
+				lastSvg.classList.toggle('hidden');
+			}
+		});
+	}
+</script>
 </script>
