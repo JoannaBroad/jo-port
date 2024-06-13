@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components'
 import Footer from '../components/footer.astro'
-
+import Head from '../components/nav.astro'
 ---
 <html lang="en">
 	<head>
@@ -12,7 +12,7 @@ import Footer from '../components/footer.astro'
 		<title>Astro</title>
 	</head>
 	<body class=" bg-rum-100 text-rum-800 font-serif relative">
-		header here
+		<Head />
 		<slot />
 		<Footer />
 	</body>
