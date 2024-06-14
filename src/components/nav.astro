@@ -7,7 +7,6 @@ import { Icon } from 'astro-icon/components';
     <div class="flex items-center justify-between h-10">
       <div class="flex items-center">
         <Icon name="newlogo" size={75} class=" ml-4" />
-          
       </div>
       <div class="hidden md:block">
         <div class="ml-10">
@@ -30,30 +29,41 @@ import { Icon } from 'astro-icon/components';
     </div>
   </div>
 
-  <div class="md:hidden" id="mobile-menu">
-    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+  <div class="md:hidden hidden" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1 ">
       <a href="#" class="hover:bg-highland-500 hover:text-white block px-3 py-2 rounded-md duration-1000">About</a>
       <a href="#" class="hover:bg-highland-500 hover:text-white block px-3 py-2 rounded-md duration-1000">Projects</a>
-      <a href="#" class="hover:bg-highland-500 hover:text-white block px-3 py-2 rounded-md duration-1000">Contact me</a>
+      <a href="#" class="hover:bg-highland-500 hover:text-white block rounded-md duration-1000">Contact me</a>
       
     </div>
   </div>
 </nav>
 
 <script lang="ts">
-	const mobileMenuButton = document.getElementById('mobile-menu-button');
-	const mobileMenu = document.getElementById('mobile-menu');
+  
+  window.addEventListener('DOMContentLoaded', () => {
+    if (mobileMenu && mobileMenu.classList.contains('hidden')) {
+        const firstSvg = mobileMenuButton.querySelector('svg:first-child');
+        const lastSvg = mobileMenuButton.querySelector('svg:last-child');
+        if (firstSvg && lastSvg) {
+            firstSvg.classList.remove('hidden');
+            lastSvg.classList.add('hidden');
+        }
+    }
+});
 
-	if (mobileMenuButton && mobileMenu) {
-		mobileMenuButton.addEventListener('click', () => {
-			mobileMenu.classList.toggle('hidden');
-			const firstSvg = mobileMenuButton.querySelector('svg:first-child');
-			const lastSvg = mobileMenuButton.querySelector('svg:last-child');
-			if (firstSvg && lastSvg) {
-				firstSvg.classList.toggle('hidden');
-				lastSvg.classList.toggle('hidden');
-			}
-		});
-	}
-</script>
+	const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const firstSvg = mobileMenuButton.querySelector('svg:first-child');
+        const lastSvg = mobileMenuButton.querySelector('svg:last-child');
+        if (firstSvg && lastSvg) {
+            firstSvg.classList.toggle('hidden');
+            lastSvg.classList.toggle('hidden');
+        }
+    });
+}
 </script>
