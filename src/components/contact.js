@@ -1,10 +1,6 @@
----
-
----
-
 <section class=" my-5 w-3/4 mx-auto py-10" id="contact">
   <h2 class=" text-5xl text-center">Reach out</h2>
-  <hr class=" w-3/4 h-0.5 mx-auto my-5 bg-highland-500 border-0 rounded mb-10 ">
+  <hr class=" w-3/4 h-0.5 mx-auto my-5 bg-highland-500 border-0 rounded mb-10 " />
   <form name="contact" method="POST" class="grid gap-5 netlify">
     <div class="grid gap-10 lg:grid-flow-col">
     <input type="hidden" name="subject" value="Joanna you have a massage"/>
@@ -12,13 +8,12 @@
       <label for="name" class="">Your name please:</label>
       <input type="text" name="name" class="border border-rum-900 rounded-lg p-2 shadow-sm shadow-rum-800" /> 
       <label for="email" class="pt-5">What email can I reach you:</label>
-      <input type="text" name="email" class="border border-rum-900 rounded-lg p-2 shadow-sm shadow-rum-800">  
+      <input type="text" name="email" class="border border-rum-900 rounded-lg p-2 shadow-sm shadow-rum-800" />
       <input type="hidden" name="form-name" value="feedback" />
     </div>
     <div class="grid gap-2">
       <label for="message" class="">Leave me a massage:</label>
       <textarea name="message" rows="5" class="border border-rum-900 rounded-lg p-2 shadow-sm shadow-rum-800 resize-none"></textarea>
-     
     </div>
   </div>
   <button class="bg-highland-500 text-rum-100 rounded-lg w-24 m-auto p-2 border-rum-950 border shadow-md shadow-rum-800">Send</button>
